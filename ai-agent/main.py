@@ -3,10 +3,13 @@ import sys
 from google import genai
 from google.genai import types
 from dotenv import load_dotenv
+from functions.get_files_info import get_files_info
 
 
 def main():
     load_dotenv()
+    get_files_info("calculator", ".")
+    exit(1)
     args = sys.argv[1:]
     if len(args) == 0:
         exit(1)
